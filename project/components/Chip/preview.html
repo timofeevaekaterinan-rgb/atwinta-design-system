@@ -1,0 +1,25 @@
+<!-- @dsCard group="Действия" height=260 subtitle="Теги проектов и фильтры услуг" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Chip</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.dark{background:var(--black);padding:20px;margin:0 -24px}
+</style>
+</head>
+<body>
+<div class="stack">
+<div><p class="cap">Тег секции · активный · розовый · жёлтый</p>
+<div class="row"><span class="at-chip">Партнеры</span><span class="at-chip is-active">Отзывы</span><span class="at-chip at-chip--pink">Новое</span><span class="at-chip at-chip--yellow">ИИ</span></div></div>
+<div><p class="cap">Фильтр в форме: покой · выбран</p>
+<div class="row"><span class="at-chip at-chip--filter">Разработка</span><span class="at-chip at-chip--filter is-active">Дизайн</span><span class="at-chip at-chip--filter">Мобильное приложение</span></div></div>
+<div><p class="cap">Размеры xs · sm · md · lg</p>
+<div class="row"><span class="at-chip at-chip--xs">Кейс</span><span class="at-chip at-chip--sm">E-commerce</span><span class="at-chip at-chip--md">Госсектор</span><span class="at-chip at-chip--lg">Промышленность</span></div></div>
+<div class="dark"><div class="row"><span class="at-chip at-chip--inverse">На тёмном</span><span class="at-chip at-chip--inverse at-chip--thin">Тонкая рамка</span></div></div>
+</div>
+</body>
+</html>

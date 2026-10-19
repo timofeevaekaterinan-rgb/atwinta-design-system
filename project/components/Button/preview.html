@@ -1,0 +1,24 @@
+<!-- @dsCard group="Действия" height=220 subtitle="Капсула; при наведении снизу «наезжает» второй цвет" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Button</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+
+</style>
+</head>
+<body>
+<div class="stack">
+<div><p class="cap">Розовая · жёлтая · серая — покой</p>
+<div class="row"><a class="at-btn at-btn--pink" href="#">Отправить</a><a class="at-btn at-btn--yellow" href="#">Обсудить проект</a><a class="at-btn at-btn--gray" href="#">Смотреть еще кейсы</a></div></div>
+<div><p class="cap">Наведение</p>
+<div class="row"><a class="at-btn at-btn--pink is-hover" href="#">Отправить</a><a class="at-btn at-btn--yellow is-hover" href="#">Обсудить проект</a><a class="at-btn at-btn--gray is-hover" href="#">Смотреть еще кейсы</a></div></div>
+<div><p class="cap">Размеры: 60 · 50 (мобильный) · 40 (medium)</p>
+<div class="row"><a class="at-btn at-btn--pink" href="#">Принять</a><a class="at-btn at-btn--pink at-btn--sm" href="#">Принять</a><a class="at-btn at-btn--pink at-btn--md" href="#">Принять</a></div></div>
+</div>
+</body>
+</html>

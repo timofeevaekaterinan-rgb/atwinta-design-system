@@ -1,0 +1,21 @@
+<!-- @dsCard group="Контент" height=460 subtitle="Квадратная карточка кейса в сетке с зазором 1px" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>ProjectCard</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.m1{background:var(--pink)}.m2{background:var(--black)}.m3{background:var(--yellow)}
+</style>
+</head>
+<body>
+<div class="at-cards" style="max-width:1100px">
+<a class="at-card at-card--black-skin" href="#"><span class="at-card__media m1"></span><div class="at-card__awards"><span class="at-card__award">Золотой сайт · 2</span></div><div class="at-card__title">Сервис подготовки к ЕГЭ СМИТАП: 8000 учеников ежедневно</div></a>
+<a class="at-card at-card--black-skin" href="#"><span class="at-card__media m2"></span><div class="at-card__awards"><span class="at-card__award">Tagline · 1</span></div><div class="at-card__title">BI-система Аналитического центра при Правительстве РФ</div></a>
+<a class="at-card at-card--white-skin" href="#"><span class="at-card__media m3"></span><div class="at-card__awards"><span class="at-card__award">Рейтинг Рунета · 4</span></div><div class="at-card__title">Стартап из США — доставка день в день GoFlyy</div></a>
+</div>
+</body>
+</html>

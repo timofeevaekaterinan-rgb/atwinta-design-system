@@ -1,0 +1,21 @@
+<!-- @dsCard group="Формы" height=200 subtitle="Согласия в форме заявки" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Checkbox</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+
+</style>
+</head>
+<body>
+<div class="stack" style="max-width:560px">
+<label class="at-check"><span class="at-check__box"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" stroke="var(--pink)" stroke-width="2"/></svg></span>Я согласен на получение рекламных сообщений</label>
+<label class="at-check is-checked"><span class="at-check__box"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" stroke="var(--pink)" stroke-width="2"/></svg></span><span>Я даю согласие на обработку персональных данных в соответствии с <a class="at-textlink" href="#">политикой обработки персональных данных</a></span></label>
+<label class="at-check is-attention"><span class="at-check__box"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" stroke="var(--pink)" stroke-width="2"/></svg></span>Отметьте согласие, чтобы отправить заявку</label>
+</div>
+</body>
+</html>

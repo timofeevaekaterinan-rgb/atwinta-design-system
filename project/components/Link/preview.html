@@ -1,0 +1,23 @@
+<!-- @dsCard group="Навигация" height=200 subtitle="Ссылка меню с цветовой «шторкой» и текстовая ссылка" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Link</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.dark{background:var(--black);padding:20px;margin:0 -24px}
+</style>
+</head>
+<body>
+<div class="stack">
+<div><p class="cap">Меню на светлом: покой · наведение · текущая</p>
+<div class="row"><a class="at-link at-link--dark" href="#">Агентство</a><a class="at-link at-link--dark is-hover" href="#">Услуги</a><a class="at-link at-link--dark is-current" href="#">Проекты</a></div></div>
+<div class="dark"><div class="row"><a class="at-link at-link--light" href="#">Агентство</a><a class="at-link at-link--light is-hover" href="#">Решения</a><a class="at-link at-link--light" href="#">Блог<span class="at-link__line"></span></a></div></div>
+<div><p class="cap">Ссылка в тексте</p>
+<p class="text-p-x" style="margin:0;color:var(--ink-secondary)">Продолжая пользоваться сайтом, вы соглашаетесь с использованием файлов <a class="at-textlink" href="#">cookie</a> и с нашей <a class="at-textlink" href="#">Политикой обработки персональных данных</a>.</p></div>
+</div>
+</body>
+</html>

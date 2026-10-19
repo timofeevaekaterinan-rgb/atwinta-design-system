@@ -1,0 +1,25 @@
+<!-- @dsCard group="Навигация" height=240 subtitle="Закреплённая шапка: полупрозрачный белый и blur 25px" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Header</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+body{padding:0}.bg{background:var(--pink);padding:0 0 40px}.dk{background:var(--black)}
+</style>
+</head>
+<body>
+<div class="bg"><header class="at-header">
+<img class="at-header__logo" src="/_blob/7ce84237f7398ee718a39792944a45fc" alt="Атвинта">
+<nav class="at-header__nav"><a class="at-link at-link--dark" href="#">Агентство</a><a class="at-link at-link--dark" href="#">Услуги <img src="/_blob/e1424072dd42cdc3d8c2de4c35344c75" width="20" height="20" alt=""></a><a class="at-link at-link--dark is-hover" href="#">Проекты</a><a class="at-link at-link--dark" href="#">Блог</a></nav>
+<div class="at-header__end"><a class="at-header__phone" href="#">+7 (499) 350-13-90</a><a class="at-btn at-btn--yellow at-btn--header" href="#">Обсудить проект</a><button class="at-burger" aria-label="Меню"><span></span><span></span><span></span></button></div>
+</header></div>
+<div class="dk" data-theme="dark"><header class="at-header">
+<img class="at-header__logo" src="/_blob/3ae12d868333971c5e9cac2842392051" alt="Атвинта">
+<div class="at-header__end"><a class="at-header__phone" href="#">+7 (499) 350-13-90</a><a class="at-btn at-btn--yellow at-btn--header" href="#">Обсудить проект</a><button class="at-burger" aria-label="Меню"><span></span><span></span><span></span></button></div>
+</header></div>
+</body>
+</html>

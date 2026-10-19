@@ -1,0 +1,93 @@
+/* Атвинта — generated from tokens.json */
+:root, [data-theme="light"] {
+  --pink: #ff2159;
+  --pink-dark: #a92343;
+  --pink-light: #ff5876;
+  --pink-30: #ff21594d;
+  --yellow: #f0ff40;
+  --yellow-50: #f0ff4080;
+  --black: #222222;
+  --extra-dark-gray: #424242;
+  --dark-gray: #787878;
+  --gray: #a4a4a4;
+  --light-gray: #d9d9d9;
+  --extra-light-gray: #f4f4f4;
+  --white: #ffffff;
+  --white-40: #ffffff66;
+  --white-70: #ffffffb3;
+  --b2b-card-border: #383838;
+  --b2b-card-label: #646464;
+  --surface: var(--white);
+  --surface-alt: var(--extra-light-gray);
+  --ink: var(--black);
+  --ink-secondary: var(--extra-dark-gray);
+  --ink-muted: var(--dark-gray);
+  --line: var(--light-gray);
+  --accent: var(--pink);
+  --on-accent: var(--white);
+  --highlight: var(--yellow);
+  --on-highlight: var(--extra-dark-gray);
+  --link-hover: var(--pink);
+  --header-bg: #ffffff99;
+  --error: var(--pink);
+  --focus-ring: var(--pink);
+  --chromatic: -3px 0 0 #f0ff40, 3px 0 0 #ff215980;
+  --attention-ring: 0 0 0 3px #ff215940;
+}
+[data-theme="dark"] {
+  --surface: var(--black);
+  --surface-alt: var(--b2b-card-border);
+  --ink: var(--white);
+  --ink-secondary: var(--white-70);
+  --ink-muted: var(--gray);
+  --line: #555555;
+  --link-hover: var(--yellow);
+  --header-bg: #22222299;
+}
+:root {
+  --space-3xs: 5px;
+  --space-2xs: 10px;
+  --space-xs: 20px;
+  --space-sm: 30px;
+  --space-md: 40px;
+  --space-lg: 60px;
+  --space-xl: 80px;
+  --space-2xl: 120px;
+  --space-3xl: 160px;
+  --space-4xl: 180px;
+  --layout-column-gap: 80px;
+  --header-height: 100px;
+  --header-mb: 80px;
+  --b2b-px: 120px;
+  --b2b-py: 150px;
+  --b2b-py-sm: 75px;
+  --radius-pill: 160px;
+  --radius-chip: 50px;
+  --radius-lg: 24px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  --radius-xs: 2px;
+  --radius-circle: 50%;
+  --header-blur: blur(25px);
+  --bp-sm: 720px;
+  --bp-md: 1000px;
+  --bp-lg: 1280px;
+  --bp-xl: 1440px;
+  --bp-2xl: 1680px;
+  --bp-3xl: 1900px;
+  --font-display: Stem, Geologica, sans-serif;
+  --font-sans: Geologica, sans-serif;
+}
+.text-h-xxl { font-family: var(--font-display); font-size: 150px; line-height: 150px; font-weight: 500; letter-spacing: -2.7px; }
+.text-h-xl { font-family: var(--font-display); font-size: 80px; line-height: 80px; font-weight: 500; letter-spacing: -2.1px; }
+.text-h-l { font-family: var(--font-sans); font-size: 50px; line-height: 60px; font-weight: 400; letter-spacing: -1.5px; }
+.text-h-m { font-family: var(--font-sans); font-size: 40px; line-height: 50px; font-weight: 500; letter-spacing: -1.2px; }
+.text-p-s { font-family: var(--font-sans); font-size: 32px; line-height: 40px; font-weight: 500; letter-spacing: -0.96px; }
+.text-p-xs { font-family: var(--font-sans); font-size: 26px; line-height: 32px; font-weight: 400; letter-spacing: -0.78px; }
+.text-p-special { font-family: var(--font-sans); font-size: 22px; line-height: 30px; font-weight: 300; letter-spacing: -0.66px; }
+.text-h-x { font-family: var(--font-sans); font-size: 20px; line-height: 30px; font-weight: 300; letter-spacing: -0.6px; }
+.text-p-x { font-family: var(--font-sans); font-size: 15px; line-height: 20px; font-weight: 300; letter-spacing: -0.45px; }
+.ui-link { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 300; letter-spacing: -0.5px; }
+.ui-chip { font-family: var(--font-sans); font-size: 18px; line-height: 26px; font-weight: 400; letter-spacing: -0.5px; }
+.ui-chip-filter { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 300; letter-spacing: -0.5px; }
+.ui-tag { font-family: var(--font-sans); font-size: 12px; line-height: 12px; font-weight: 500; letter-spacing: 0px; }

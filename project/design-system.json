@@ -1,0 +1,45 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": { "v": 1, "at": "2026-10-19T14:20:00Z" },
+  "title": "Атвинта",
+  "namespace": "Atwinta",
+  "libraries": [],
+  "sections": {},
+  "groups": ["Logos", "Icons"],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": ["atwinta-logo-dark.svg", "atwinta-logo-light.svg"],
+      "files": {
+        "atwinta-logo-dark.svg": { "name": "atwinta-logo-dark.svg", "blob": "7ce84237f7398ee718a39792944a45fc", "size": 2268, "type": "image/svg+xml" },
+        "atwinta-logo-light.svg": { "name": "atwinta-logo-light.svg", "blob": "3ae12d868333971c5e9cac2842392051", "size": 2317, "type": "image/svg+xml" }
+      }
+    },
+    "Icons": {
+      "name": "Icons",
+      "tile": "xs",
+      "order": ["arrow-outward.svg", "arrow-forward.svg", "arrow-back.svg", "chevron-left.svg", "chevron-right.svg", "keyboard-arrow-down.svg", "close.svg", "add.svg", "remove.svg", "search.svg", "play-arrow.svg", "note-add-outline.svg", "service-arrow.svg", "service-dot.svg"],
+      "files": {
+        "arrow-outward.svg": { "name": "arrow-outward.svg", "blob": "d7f4814ded79296462472f1d97b5f3f9", "size": 161, "type": "image/svg+xml" },
+        "arrow-forward.svg": { "name": "arrow-forward.svg", "blob": "ee49718b33e7bc6b204feead7f1f2e91", "size": 177, "type": "image/svg+xml" },
+        "arrow-back.svg": { "name": "arrow-back.svg", "blob": "39515d0416443a4c639d5cee4e40158e", "size": 178, "type": "image/svg+xml" },
+        "close.svg": { "name": "close.svg", "blob": "992423f90657b28c062faef679537cc8", "size": 211, "type": "image/svg+xml" },
+        "keyboard-arrow-down.svg": { "name": "keyboard-arrow-down.svg", "blob": "e1424072dd42cdc3d8c2de4c35344c75", "size": 163, "type": "image/svg+xml" },
+        "chevron-left.svg": { "name": "chevron-left.svg", "blob": "05f138ef0455219b25e67f37b8a9e3ef", "size": 161, "type": "image/svg+xml" },
+        "chevron-right.svg": { "name": "chevron-right.svg", "blob": "76dbcff985613d30d26da17aa9192b31", "size": 158, "type": "image/svg+xml" },
+        "add.svg": { "name": "add.svg", "blob": "25004e61d229fd4ab9d2ccc82aa0000b", "size": 154, "type": "image/svg+xml" },
+        "remove.svg": { "name": "remove.svg", "blob": "b99326b3b0a83544aa755272ce74c934", "size": 136, "type": "image/svg+xml" },
+        "search.svg": { "name": "search.svg", "blob": "59337ebf68ff9df21da41bc8468363f5", "size": 350, "type": "image/svg+xml" },
+        "play-arrow.svg": { "name": "play-arrow.svg", "blob": "462346d409fdd9ff1c56bcfe3d5ddda1", "size": 135, "type": "image/svg+xml" },
+        "note-add-outline.svg": { "name": "note-add-outline.svg", "blob": "2db87ea5eeb65215d0ad16d63e596b6f", "size": 271, "type": "image/svg+xml" },
+        "service-arrow.svg": { "name": "service-arrow.svg", "blob": "8664cca701dbf709a5d212ded249c5b1", "size": 232, "type": "image/svg+xml" },
+        "service-dot.svg": { "name": "service-dot.svg", "blob": "da3bc50e6ece57a50220abf222d8cc50", "size": 156, "type": "image/svg+xml" }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": { "readme": "project/README.md", "sections": [] },
+  "lastChange": { "by": "Катя", "at": "2026-10-19T14:20:00Z", "via": "Claude Code", "note": "Первая версия системы по atwinta.ru" }
+}

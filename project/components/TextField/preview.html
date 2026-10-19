@@ -1,0 +1,22 @@
+<!-- @dsCard group="Формы" height=300 subtitle="Поле с плавающей подписью и нижней линией" -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>TextField</title>
+<style>
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 40px;max-width:820px}
+</style>
+</head>
+<body>
+<div class="grid">
+<div class="at-field"><input class="at-field__input" id="tf1" placeholder=" "><label class="at-field__label" for="tf1">Ваше имя <b>*</b></label></div>
+<div class="at-field is-focus"><input class="at-field__input" id="tf2" placeholder=" "><label class="at-field__label" for="tf2">Компания</label></div>
+<div class="at-field is-filled"><input class="at-field__input" id="tf3" value="+7 (499) 350-13-90"><label class="at-field__label" for="tf3">Телефон <b>*</b></label></div>
+<div class="at-field is-filled is-error"><input class="at-field__input" id="tf4" value="info@atwinta" aria-invalid="true"><label class="at-field__label" for="tf4">Эл. почта <b>*</b></label><div class="at-field__error">Введите корректный адрес почты</div></div>
+</div>
+</body>
+</html>
