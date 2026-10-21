@@ -81,7 +81,7 @@ for name in order:
                  f'<div class="md" data-md="{name}"></div></section>')
     nav_c.append(f'<a href="#c-{name}">{name}</a>')
 
-cover = unblob(read("project", "components", "Cover", "preview.html").split("\n", 1)[1]).replace("<html", '<html data-theme="light"', 1).replace("<head>", "<head>" + HEAD, 1)
+cover = unblob(read("project", "components", "Cover", "preview.html").split("\n", 1)[1]).replace("<html", '<html data-theme="light"', 1).replace("<head>", "<head>" + HEAD + "<script>const z=()=>document.documentElement.style.zoom=innerWidth/960;z();addEventListener('resize',z)</script>", 1)
 logos = "".join(f'<figure class="{"dark" if "light" in n else ""}"><img src="project/assets/Logos/{n}" alt="{n}"><figcaption>{n}</figcaption></figure>'
                 for n in idx["assetGroups"]["Logos"]["order"])
 icons = "".join(f'<figure><img src="project/assets/Icons/{n}" alt="{n}"><figcaption>{n[:-4]}</figcaption></figure>'
