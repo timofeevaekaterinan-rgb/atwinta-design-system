@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Атвинта — дизайн-система</title>
+<meta name="description" content="Дизайн-система по сайту atwinta.ru: цвета, типографика, отступы, компоненты, логотипы и иконки.">
+<link rel="stylesheet" href="dist/tokens.css"><link rel="stylesheet" href="project/components/bundle.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--black);font-family:var(--font-sans);font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{display:grid;grid-template-columns:240px minmax(0,1fr);max-width:1440px;margin:0 auto}
+nav{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:40px 30px;border-right:2px solid var(--extra-light-gray)}
+nav img{width:140px;display:block;margin-bottom:30px}
+nav p{margin:24px 0 8px;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-gray)}
+nav a{display:block;padding:5px 0;font-size:16px;text-decoration:none}
+nav a:hover{color:var(--pink)}
+main{padding:40px 60px 120px;min-width:0}
+.cover{width:100%;aspect-ratio:960/288;border:0;display:block;border-radius:0;background:var(--white)}
+section.blk{padding-top:80px}
+h2{font-size:50px;line-height:60px;font-weight:400;letter-spacing:-1.5px;margin:0 0 30px}
+h3{font-size:32px;line-height:40px;font-weight:500;letter-spacing:-.96px;margin:0}
+h4{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-gray);margin:40px 0 10px}
+.nm{margin:0;font-weight:500;font-size:15px;color:var(--black)}
+.val{margin:4px 0 0;font:400 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--extra-dark-gray)}
+.us{margin:6px 0 0;font-size:14px;line-height:20px;color:var(--extra-dark-gray)}
+.md{max-width:820px;font-size:18px;line-height:28px;font-weight:300}
+.md h2{font-size:32px;line-height:40px;font-weight:500;letter-spacing:-.96px;margin:50px 0 16px}
+.md h1{display:none}
+.md code{font:400 15px ui-monospace,Menlo,monospace;background:var(--extra-light-gray);padding:1px 6px;border-radius:6px}
+.md table{border-collapse:collapse;font-size:15px;margin:16px 0;display:block;overflow-x:auto}
+.md td,.md th{border-bottom:2px solid var(--extra-light-gray);padding:8px 14px 8px 0;text-align:left;white-space:nowrap}
+.md strong{font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:30px 24px}
+.chips{height:96px;display:flex;border-radius:8px;overflow:hidden;border:2px solid var(--extra-light-gray);margin-bottom:12px;
+  background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/16px 16px}
+.chip{flex:1}
+.ty{display:grid;grid-template-columns:260px minmax(0,1fr);gap:30px;align-items:baseline;padding:24px 0;border-bottom:2px solid var(--extra-light-gray)}
+.spec{margin:0;overflow-wrap:anywhere}
+.sp{display:grid;grid-template-columns:180px 200px 70px minmax(0,1fr);gap:20px;align-items:center;padding:10px 0;border-bottom:2px solid var(--extra-light-gray)}
+.sp .bar{height:20px;background:var(--pink);display:block;max-width:200px}
+.sp .us,.sp .val{margin:0}
+.rd .box{display:block;width:120px;height:80px;background:var(--extra-light-gray);border:2px solid var(--light-gray);margin-bottom:12px}
+.num-demo{display:block;font-family:var(--font-display);font-size:90px;line-height:1;font-weight:700;letter-spacing:-2.7px;margin-bottom:12px}
+table.bp{border-collapse:collapse;font-size:15px}
+table.bp td{padding:10px 30px 10px 0;border-bottom:2px solid var(--extra-light-gray)}
+.comp{padding:50px 0;border-bottom:2px solid var(--extra-light-gray)}
+.comp .ch{margin-bottom:20px}
+.comp iframe{width:100%;border:2px solid var(--extra-light-gray);background:var(--white);display:block;margin-bottom:24px}
+.comp .md{font-size:16px;line-height:24px}
+.comp .md h2{font-size:20px;line-height:30px;margin:26px 0 8px}
+.assets{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:16px}
+.assets.logos{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+figure{margin:0;padding:24px;border:2px solid var(--extra-light-gray);display:flex;flex-direction:column;align-items:center;gap:12px}
+figure.dark{background:var(--black)} figure.dark figcaption{color:var(--gray)}
+figure img{max-width:100%;height:40px} .assets:not(.logos) img{height:30px}
+figcaption{font-size:12px;color:var(--dark-gray);text-align:center;word-break:break-all}
+.src{margin-top:12px;font-size:15px;color:var(--dark-gray)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}nav{position:static;height:auto;border-right:0;border-bottom:2px solid var(--extra-light-gray);padding:20px}
+  nav a{display:inline-block;margin-right:14px}main{padding:24px 16px 80px}.ty,.sp{grid-template-columns:1fr;gap:6px}h2{font-size:32px;line-height:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <img src="project/assets/Logos/atwinta-logo-dark.svg" alt="Атвинта">
+  <p>Основы</p>
+  <a href="#readme">Брендбук</a><a href="#colors">Цвета</a><a href="#type">Типографика</a><a href="#space">Отступы</a><a href="#radius">Скругления</a><a href="#effects">Эффекты</a><a href="#bp">Брейкпоинты</a><a href="#assets">Логотипы и иконки</a>
+  <p>Компоненты</p>
+  <a href="#c-Button">Button</a><a href="#c-Chip">Chip</a><a href="#c-Link">Link</a><a href="#c-TextField">TextField</a><a href="#c-Checkbox">Checkbox</a><a href="#c-NumberFact">NumberFact</a><a href="#c-ServiceLine">ServiceLine</a><a href="#c-ProjectCard">ProjectCard</a><a href="#c-Header">Header</a>
+  <p>Исходники</p>
+  <a href="https://github.com/timofeevaekaterinan-rgb/atwinta-design-system">GitHub</a><a href="project/tokens.json">tokens.json</a><a href="dist/tokens.css">tokens.css</a><a href="project/components/bundle.css">bundle.css</a>
+</nav>
+<main>
+  <iframe class="cover" title="Обложка" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Атвинта&lt;/title&gt;
+&lt;style&gt;
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; }
+  .art svg { display:block; width:480px; height:288px; }
+  .pink { fill:var(--pink); }
+  .yellow { fill:var(--yellow); }
+  .deep { fill:var(--ink); }
+  .cut { fill:var(--pink-dark); }
+  .glow { fill:var(--pink-light); }
+  .words { position:absolute; left:40px; bottom:40px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:100px; line-height:.95; font-weight:500; letter-spacing:-3px; color:var(--ink); }
+  .tag { margin:10px 0 0 4px; font-size:14px; line-height:20px; font-weight:300; letter-spacing:-.3px; color:var(--ink-muted); }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;cover&quot;&gt;
+  &lt;div class=&quot;art&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 480 288&quot; width=&quot;480&quot; height=&quot;288&quot;&gt;
+      &lt;!--
+        blocks      pink 240×288 slab, bled top and bottom (the identity colour, largest) · yellow 224×120 bled off the right · ink 224×152 bled off right and bottom — ≈45% of 960×288
+        arrangement one tall pink slab with two satellites, gutter space-xs (20px → 16 at this scale), square corners: cards and sections on the site have no radius
+        pattern     pills from radius-pill, rotated −45°: the hero&#x27;s glossy pink 3D slabs and the capsule buttons are the brand&#x27;s one recurring shape; six pills, cut into the slab in pink-dark and pink-light, one pink pill on the ink block, one pink-dark pill on the yellow
+        scales      pill height space-md (40px), rx = half of it; pitch space-lg (60px); gutters space-xs
+      --&gt;
+      &lt;rect class=&quot;pink&quot; x=&quot;0&quot; y=&quot;-8&quot; width=&quot;240&quot; height=&quot;304&quot;/&gt;
+      &lt;rect class=&quot;yellow&quot; x=&quot;256&quot; y=&quot;0&quot; width=&quot;232&quot; height=&quot;120&quot;/&gt;
+      &lt;rect class=&quot;deep&quot; x=&quot;256&quot; y=&quot;136&quot; width=&quot;232&quot; height=&quot;160&quot;/&gt;
+      &lt;g transform=&quot;rotate(-45 120 144)&quot;&gt;
+        &lt;rect class=&quot;cut&quot; x=&quot;-10&quot; y=&quot;64&quot; width=&quot;150&quot; height=&quot;40&quot; rx=&quot;20&quot;/&gt;
+        &lt;rect class=&quot;glow&quot; x=&quot;60&quot; y=&quot;124&quot; width=&quot;190&quot; height=&quot;40&quot; rx=&quot;20&quot;/&gt;
+        &lt;rect class=&quot;cut&quot; x=&quot;0&quot; y=&quot;184&quot; width=&quot;130&quot; height=&quot;40&quot; rx=&quot;20&quot;/&gt;
+        &lt;rect class=&quot;glow&quot; x=&quot;120&quot; y=&quot;244&quot; width=&quot;110&quot; height=&quot;40&quot; rx=&quot;20&quot;/&gt;
+      &lt;/g&gt;
+      &lt;rect class=&quot;pink&quot; x=&quot;300&quot; y=&quot;196&quot; width=&quot;140&quot; height=&quot;40&quot; rx=&quot;20&quot; transform=&quot;rotate(-45 370 216)&quot;/&gt;
+      &lt;rect class=&quot;cut&quot; x=&quot;330&quot; y=&quot;30&quot; width=&quot;110&quot; height=&quot;40&quot; rx=&quot;20&quot; transform=&quot;rotate(-45 385 50)&quot;/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;words&quot;&gt;
+    &lt;h1 class=&quot;name&quot;&gt;Атвинта&lt;/h1&gt;
+    &lt;p class=&quot;tag&quot;&gt;ИИ-разработка цифровых продуктов&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+  <p class="src">Собрано по CSS сайта <a href="https://atwinta.ru/">atwinta.ru</a>. Значения токенов — для ширины от 1680px.</p>
+
+  <section class="blk" id="readme"><h2>Брендбук</h2><div class="md" data-md="readme"></div></section>
+
+  <section class="blk" id="colors"><h2>Цвета</h2>
+    <h4>Палитра сайта</h4><div class="grid"><div class="sw"><div class="chips"><span class="chip" style="background:#ff2159"></span></div><p class="nm">pink</p><p class="val">#ff2159</p><p class="us">Фирменный розовый (--pink). Основная кнопка, точки и стрелки в списке услуг, подчёркивание ссылок, ошибки форм, буква «и» в логотипе. Белый текст на нём — 3.74:1: проходит только для текста от 24px, у сайта так и в кнопке 15px (оставлено как в источнике).</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#a92343"></span></div><p class="nm">pink-dark</p><p class="val">#a92343</p><p class="us">Тёмный розовый (--pink-dark). Нажатое состояние и тени розовых плашек. Белый текст на нём — 6.98:1.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ff5876"></span></div><p class="nm">pink-light</p><p class="val">#ff5876</p><p class="us">Светлый розовый (--pink-light). Розовый текст на тёмном фоне: на black — 5.23:1.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ff21594d"></span></div><p class="nm">pink-30</p><p class="val">#ff21594d</p><p class="us">Розовый 30% (--pink-30). Подчёркивание ссылки при наведении, мягкая подложка.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#f0ff40"></span></div><p class="nm">yellow</p><p class="val">#f0ff40</p><p class="us">Кислотно-жёлтый (--yellow). Кнопка «Обсудить проект», активный чип, наведение на розовую кнопку, ссылки на тёмном. Текст на нём — extra-dark-gray (9.13:1).</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#f0ff4080"></span></div><p class="nm">yellow-50</p><p class="val">#f0ff4080</p><p class="us">Жёлтый 50% (--yellow-50). Полупрозрачная подсветка.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#222222"></span></div><p class="nm">black</p><p class="val">#222222</p><p class="us">Фирменный чёрный (--black). Основной текст, подвал, тёмные секции. На white — 15.91:1.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#424242"></span></div><p class="nm">extra-dark-gray</p><p class="val">#424242</p><p class="us">Вторичный текст (--extra-dark-gray): описания, подписи чипов, текст на жёлтом. На white — 10.05:1, на extra-light-gray — 9.14:1.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#787878"></span></div><p class="nm">dark-gray</p><p class="val">#787878</p><p class="us">Приглушённый текст (--dark-gray): подпись поля после заполнения, мелкие пояснения. На white — 4.42:1, чуть ниже AA для мелкого текста; оставлено как в источнике.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#a4a4a4"></span></div><p class="nm">gray</p><p class="val">#a4a4a4</p><p class="us">Серый (--gray): рамка чекбокса, иконки в полях, неактивные цифры. На white — 2.49:1, не для текста на светлом. На black — 6.38:1.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#d9d9d9"></span></div><p class="nm">light-gray</p><p class="val">#d9d9d9</p><p class="us">Линии (--light-gray): нижняя граница поля, рамка чипа, разделители списка услуг. Декоративные, 1.41:1 к white.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#f4f4f4"></span></div><p class="nm">extra-light-gray</p><p class="val">#f4f4f4</p><p class="us">Светлая подложка (--extra-light-gray): серая кнопка, заливка строки услуги при наведении, фон секций.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ffffff"></span></div><p class="nm">white</p><p class="val">#ffffff</p><p class="us">Белый (--white). Фон страницы, текст на тёмном и на pink.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ffffff66"></span></div><p class="nm">white-40</p><p class="val">#ffffff66</p><p class="us">Белый 40% (--white-40). Разделители и неактивные элементы на тёмном.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ffffffb3"></span></div><p class="nm">white-70</p><p class="val">#ffffffb3</p><p class="us">Белый 70% (--b2b-white-70). Вторичный текст на black (≈9.6:1).</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#383838"></span></div><p class="nm">b2b-card-border</p><p class="val">#383838</p><p class="us">Граница карточек в тёмных секциях (--b2b-card-border).</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#646464"></span></div><p class="nm">b2b-card-label</p><p class="val">#646464</p><p class="us">Подпись в тёмных карточках (--b2b-card-label). На black — 2.69:1, только крупно или как декор.</p></div></div>
+    <h4>Семантические токены · светлая / тёмная тема</h4><div class="grid"><div class="sw"><div class="chips two"><span class="chip" style="background:#ffffff"></span><span class="chip" style="background:#222222"></span></div><p class="nm">surface</p><p class="val">#ffffff / #222222</p><p class="us">Фон страницы или секции. Светлая тема — основной сайт, тёмная — подвал, шапка над героем, тёмные карточки.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#f4f4f4"></span><span class="chip" style="background:#383838"></span></div><p class="nm">surface-alt</p><p class="val">#f4f4f4 / #383838</p><p class="us">Второй уровень фона: серая кнопка, заливка строки при наведении, плашка.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#222222"></span><span class="chip" style="background:#ffffff"></span></div><p class="nm">ink</p><p class="val">#222222 / #ffffff</p><p class="us">Основной текст и заголовки на surface и surface-alt. 15.91:1 в обеих темах.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#424242"></span><span class="chip" style="background:#ffffffb3"></span></div><p class="nm">ink-secondary</p><p class="val">#424242 / #ffffffb3</p><p class="us">Описания, подписи, текст чипов на surface. 10.05:1 / ≈9.6:1.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#787878"></span><span class="chip" style="background:#a4a4a4"></span></div><p class="nm">ink-muted</p><p class="val">#787878 / #a4a4a4</p><p class="us">Приглушённые подписи на surface. 4.42:1 в светлой (на грани AA), 6.38:1 в тёмной.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#d9d9d9"></span><span class="chip" style="background:#555555"></span></div><p class="nm">line</p><p class="val">#d9d9d9 / #555555</p><p class="us">Рамки чипов, нижняя граница полей, разделители. Тёмное значение — рамка инверсного чипа на сайте. Декоративные: 1.41:1 и 2.13:1, ниже 3:1 для границ контролов — состояние поля дублируется подписью и цветом при фокусе.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ff2159"></span></div><p class="nm">accent</p><p class="val">{pink}</p><p class="us">Акцент: основная кнопка, фокус и ховер полей, иконки-маркеры, ошибки.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ffffff"></span></div><p class="nm">on-accent</p><p class="val">{white}</p><p class="us">Текст на accent. 3.74:1 — как на сайте; для мелкого текста не проходит AA.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#f0ff40"></span></div><p class="nm">highlight</p><p class="val">{yellow}</p><p class="us">Выделение: главная CTA в шапке, активный чип, ховер-заливка розовой кнопки.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#424242"></span></div><p class="nm">on-highlight</p><p class="val">{extra-dark-gray}</p><p class="us">Текст на highlight. 9.13:1.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#ff2159"></span><span class="chip" style="background:#f0ff40"></span></div><p class="nm">link-hover</p><p class="val">#ff2159 / #f0ff40</p><p class="us">Цвет, которым «заливается» ссылка навигации при наведении: розовый на светлом, жёлтый на тёмном.</p></div><div class="sw"><div class="chips two"><span class="chip" style="background:#ffffff99"></span><span class="chip" style="background:#22222299"></span></div><p class="nm">header-bg</p><p class="val">#ffffff99 / #22222299</p><p class="us">Фон закреплённой шапки под backdrop-blur 25px. Светлое значение с сайта (rgba 255,255,255,.6); тёмное — та же прозрачность от black, на сайте шапка над героем прозрачная.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ff2159"></span></div><p class="nm">error</p><p class="val">{pink}</p><p class="us">Текст ошибки и граница невалидного поля. Ошибка всегда сопровождается текстом, не только цветом.</p></div><div class="sw"><div class="chips"><span class="chip" style="background:#ff2159"></span></div><p class="nm">focus-ring</p><p class="val">{pink}</p><p class="us">Кольцо фокуса: outline 3px, отступ 6px, скругление radius-sm — как подсветка согласия в форме сайта.</p></div></div>
+  </section>
+
+  <section class="blk" id="type"><h2>Типографика</h2>
+    <p class="us">Stem — коммерческий шрифт ParaType, в систему не включён; без лицензии крупные заголовки показываются Geologica.</p>
+    <h4>Дисплей · Stem</h4><div class="ty"><div class="tm"><p class="nm">text-h-xxl</p><p class="val">150px / 150px · 500 · -2.7px</p><p class="us">Цифры фактов и сверхкрупные заголовки. 1280: 120/120; 720: 90/103 bold; мобильный: 60/70 regular, −1.8px.</p></div><p class="text-h-xxl spec">400+</p></div><div class="ty"><div class="tm"><p class="nm">text-h-xl</p><p class="val">80px / 80px · 500 · -2.1px</p><p class="us">H1 героя. 1280: 70/70; 720: 50/50, −1.5px; мобильный: 32/30, −0.96px.</p></div><p class="text-h-xl spec">ИИ-разработка цифровых продуктов</p></div><h4>Заголовки · Geologica</h4><div class="ty"><div class="tm"><p class="nm">text-h-l</p><p class="val">50px / 60px · 400 · -1.5px</p><p class="us">H2 секций. 720: 40/50 medium, −1.2px; мобильный: 26/32, −0.78px.</p></div><p class="text-h-l spec">Лидеры на рынке заказной разработки</p></div><div class="ty"><div class="tm"><p class="nm">text-h-m</p><p class="val">40px / 50px · 500 · -1.2px</p><p class="us">H3, заголовки строк услуг (там вес 600) и карточек. 720–1679: 32/40, −0.96px; мобильный: 20/30 light.</p></div><p class="text-h-m spec">Внедрение ИИ</p></div><h4>Текст · Geologica</h4><div class="ty"><div class="tm"><p class="nm">text-p-s</p><p class="val">32px / 40px · 500 · -0.96px</p><p class="us">Лид и заголовок карточки проекта. 1280: 26/32 regular; до 1219: 20/30 light.</p></div><p class="text-p-s spec">Сервис подготовки к ЕГЭ СМИТАП</p></div><div class="ty"><div class="tm"><p class="nm">text-p-xs</p><p class="val">26px / 32px · 400 · -0.78px</p><p class="us">Крупный абзац. До 1279: 18/26, −0.5px.</p></div><p class="text-p-xs spec">Встраиваем LLM-агентов в весь цикл производства</p></div><div class="ty"><div class="tm"><p class="nm">text-p-special</p><p class="val">22px / 30px · 300 · -0.66px</p><p class="us">Описание под цифрой факта. 1280: 20/30; до 1219: 15/20.</p></div><p class="text-p-special spec">Аналитики, дизайнеры, разработчики и тестировщики</p></div><div class="ty"><div class="tm"><p class="nm">text-h-x</p><p class="val">20px / 30px · 300 · -0.6px</p><p class="us">Основной текст. До 1679: 15/20, −0.45px. Тот же размер у text-p-xxs.</p></div><p class="text-h-x spec">Интерфейсы на основе аналитики и данных</p></div><div class="ty"><div class="tm"><p class="nm">text-p-x</p><p class="val">15px / 20px · 300 · -0.45px</p><p class="us">Подписи, ошибки, согласия, текст кнопок. Не меняется по брейкпоинтам.</p></div><p class="text-p-x spec">Прикрепить до 5 файлов максимально до 20 МБ</p></div><h4>Интерфейс · Geologica</h4><div class="ty"><div class="tm"><p class="nm">ui-link</p><p class="val">18px / 28px · 300 · -0.5px</p><p class="us">Пункты меню шапки (на узких — 16px).</p></div><p class="ui-link spec">Агентство  Услуги  Проекты  Блог</p></div><div class="ty"><div class="tm"><p class="nm">ui-chip</p><p class="val">18px / 26px · 400 · -0.5px</p><p class="us">Текст чипа-тега от 720px. Мобильный: 14/20, без трекинга.</p></div><p class="ui-chip spec">Партнеры</p></div><div class="ty"><div class="tm"><p class="nm">ui-chip-filter</p><p class="val">16px / 24px · 300 · -0.5px</p><p class="us">Чипы-фильтры и выбор услуги в форме.</p></div><p class="ui-chip-filter spec">Мобильное приложение</p></div><div class="ty"><div class="tm"><p class="nm">ui-tag</p><p class="val">12px / 12px · 500 · 0px</p><p class="us">Маленькие теги размеров md/lg. Размер xs — 10px, ВЕРХНИЙ РЕГИСТР.</p></div><p class="ui-tag spec">Кейс</p></div>
+  </section>
+
+  <section class="blk" id="space"><h2>Отступы и сетка</h2><div class="sp"><p class="nm">space-3xs</p><span class="bar" style="width:5px"></span><p class="val">5px</p><p class="us">Микрозазоры: иконка — текст. Одинаков на всех ширинах.</p></div><div class="sp"><p class="nm">space-2xs</p><span class="bar" style="width:10px"></span><p class="val">10px</p><p class="us">Зазор между цифрой факта и подписью, мелкие стеки. Одинаков на всех ширинах.</p></div><div class="sp"><p class="nm">space-xs</p><span class="bar" style="width:20px"></span><p class="val">20px</p><p class="us">Горизонтальный паддинг чипа, отступ контейнера на мобильном.</p></div><div class="sp"><p class="nm">space-sm</p><span class="bar" style="width:30px"></span><p class="val">30px</p><p class="us">Паддинг кнопки по горизонтали, вертикальный паддинг строки услуги.</p></div><div class="sp"><p class="nm">space-md</p><span class="bar" style="width:40px"></span><p class="val">40px</p><p class="us">Паддинг карточки проекта на планшете, отступы внутри блоков.</p></div><div class="sp"><p class="nm">space-lg</p><span class="bar" style="width:60px"></span><p class="val">60px</p><p class="us">Паддинг карточки проекта на десктопе, зазоры между группами.</p></div><div class="sp"><p class="nm">space-xl</p><span class="bar" style="width:80px"></span><p class="val">80px</p><p class="us">Отступ под шапкой, разрывы внутри секции.</p></div><div class="sp"><p class="nm">space-2xl</p><span class="bar" style="width:120px"></span><p class="val">120px</p><p class="us">Вертикальный ритм между секциями.</p></div><div class="sp"><p class="nm">space-3xl</p><span class="bar" style="width:160px"></span><p class="val">160px</p><p class="us">Крупные разрывы между секциями.</p></div><div class="sp"><p class="nm">space-4xl</p><span class="bar" style="width:180px"></span><p class="val">180px</p><p class="us">Самый крупный разрыв (герой → контент).</p></div><div class="sp"><p class="nm">layout-column-gap</p><span class="bar" style="width:80px"></span><p class="val">80px</p><p class="us">Межколоночный зазор 12-колоночной сетки. 320: 20, 720: 40, 1280: 80, 1900: 120.</p></div><div class="sp"><p class="nm">header-height</p><span class="bar" style="width:100px"></span><p class="val">100px</p><p class="us">Высота шапки на десктопе (в разметке — 90px вместе с паддингом 15px).</p></div><div class="sp"><p class="nm">header-mb</p><span class="bar" style="width:80px"></span><p class="val">80px</p><p class="us">Отступ контента от шапки. До 720px — 40px.</p></div><div class="sp"><p class="nm">b2b-px</p><span class="bar" style="width:120px"></span><p class="val">120px</p><p class="us">Горизонтальный паддинг широких секций B2B-лендинга.</p></div><div class="sp"><p class="nm">b2b-py</p><span class="bar" style="width:150px"></span><p class="val">150px</p><p class="us">Вертикальный паддинг секции B2B-лендинга.</p></div><div class="sp"><p class="nm">b2b-py-sm</p><span class="bar" style="width:75px"></span><p class="val">75px</p><p class="us">Уменьшенный вертикальный паддинг секции.</p></div></section>
+  <section class="blk" id="radius"><h2>Скругления</h2><div class="grid"><div class="rd"><span class="box" style="border-radius:160px"></span><p class="nm">radius-pill</p><p class="val">160px</p><p class="us">Кнопки — всегда капсула.</p></div><div class="rd"><span class="box" style="border-radius:50px"></span><p class="nm">radius-chip</p><p class="val">50px</p><p class="us">Чипы и теги.</p></div><div class="rd"><span class="box" style="border-radius:24px"></span><p class="nm">radius-lg</p><p class="val">24px</p><p class="us">Крупные плашки B2B (--b2b-radius-lg).</p></div><div class="rd"><span class="box" style="border-radius:8px"></span><p class="nm">radius-md</p><p class="val">8px</p><p class="us">Мелкие плашки B2B (--b2b-radius-sm).</p></div><div class="rd"><span class="box" style="border-radius:6px"></span><p class="nm">radius-sm</p><p class="val">6px</p><p class="us">Кольцо фокуса / подсветка согласия.</p></div><div class="rd"><span class="box" style="border-radius:2px"></span><p class="nm">radius-xs</p><p class="val">2px</p><p class="us">Чекбокс.</p></div><div class="rd"><span class="box" style="border-radius:50%"></span><p class="nm">radius-circle</p><p class="val">50%</p><p class="us">Круглые кнопки-стрелки карусели, точки.</p></div></div></section>
+  <section class="blk" id="effects"><h2>Эффекты</h2><div class="grid"><div class="sh"><span class="num-demo" style="text-shadow:-3px 0 0 #f0ff40, 3px 0 0 #ff215980">400+</span><p class="nm">chromatic</p><p class="val">-3px 0 0 #f0ff40, 3px 0 0 #ff215980</p><p class="us">Применять как text-shadow на цифрах text-h-xxl: жёлтый сдвиг влево, розовый 50% вправо (number-fact__value).</p></div><div class="sh"><span class="num-demo" style="text-shadow:0 0 0 3px #ff215940">400+</span><p class="nm">attention-ring</p><p class="val">0 0 0 3px #ff215940</p><p class="us">Подсветка чекбокса, который забыли отметить перед отправкой формы.</p></div></div></section>
+  <section class="blk" id="bp"><h2>Брейкпоинты</h2><table class="bp"><tr><td class="nm">bp-sm</td><td>720px</td><td>Планшет. Контейнер 640px, 12 колонок.</td></tr><tr><td class="nm">bp-md</td><td>1000px</td><td>Контейнер 944px.</td></tr><tr><td class="nm">bp-lg</td><td>1280px</td><td>Десктоп. Контейнер 1120px.</td></tr><tr><td class="nm">bp-xl</td><td>1440px</td><td>Контейнер 1280px.</td></tr><tr><td class="nm">bp-2xl</td><td>1680px</td><td>Широкий десктоп, значения токенов этой системы. Контейнер 1440px.</td></tr><tr><td class="nm">bp-3xl</td><td>1900px</td><td>Контейнер 1680px, column-gap 120px.</td></tr></table></section>
+
+  <section class="blk" id="assets"><h2>Логотипы и иконки</h2>
+    <div class="assets logos"><figure class=""><img src="project/assets/Logos/atwinta-logo-dark.svg" alt="atwinta-logo-dark.svg"><figcaption>atwinta-logo-dark.svg</figcaption></figure><figure class="dark"><img src="project/assets/Logos/atwinta-logo-light.svg" alt="atwinta-logo-light.svg"><figcaption>atwinta-logo-light.svg</figcaption></figure></div>
+    <h4>Иконки</h4><div class="assets"><figure><img src="project/assets/Icons/arrow-outward.svg" alt="arrow-outward.svg"><figcaption>arrow-outward</figcaption></figure><figure><img src="project/assets/Icons/arrow-forward.svg" alt="arrow-forward.svg"><figcaption>arrow-forward</figcaption></figure><figure><img src="project/assets/Icons/arrow-back.svg" alt="arrow-back.svg"><figcaption>arrow-back</figcaption></figure><figure><img src="project/assets/Icons/chevron-left.svg" alt="chevron-left.svg"><figcaption>chevron-left</figcaption></figure><figure><img src="project/assets/Icons/chevron-right.svg" alt="chevron-right.svg"><figcaption>chevron-right</figcaption></figure><figure><img src="project/assets/Icons/keyboard-arrow-down.svg" alt="keyboard-arrow-down.svg"><figcaption>keyboard-arrow-down</figcaption></figure><figure><img src="project/assets/Icons/close.svg" alt="close.svg"><figcaption>close</figcaption></figure><figure><img src="project/assets/Icons/add.svg" alt="add.svg"><figcaption>add</figcaption></figure><figure><img src="project/assets/Icons/remove.svg" alt="remove.svg"><figcaption>remove</figcaption></figure><figure><img src="project/assets/Icons/search.svg" alt="search.svg"><figcaption>search</figcaption></figure><figure><img src="project/assets/Icons/play-arrow.svg" alt="play-arrow.svg"><figcaption>play-arrow</figcaption></figure><figure><img src="project/assets/Icons/note-add-outline.svg" alt="note-add-outline.svg"><figcaption>note-add-outline</figcaption></figure><figure><img src="project/assets/Icons/service-arrow.svg" alt="service-arrow.svg"><figcaption>service-arrow</figcaption></figure><figure><img src="project/assets/Icons/service-dot.svg" alt="service-dot.svg"><figcaption>service-dot</figcaption></figure></div>
+  </section>
+
+  <section class="blk" id="components"><h2>Компоненты</h2><section class="comp" id="c-Button"><div class="ch"><h3>Button</h3><p class="us">Капсула; при наведении снизу «наезжает» второй цвет</p></div><iframe title="Button" loading="lazy" style="height:260px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Button&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;stack&quot;&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Розовая · жёлтая · серая — покой&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;a class=&quot;at-btn at-btn--pink&quot; href=&quot;#&quot;&gt;Отправить&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--yellow&quot; href=&quot;#&quot;&gt;Обсудить проект&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--gray&quot; href=&quot;#&quot;&gt;Смотреть еще кейсы&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Наведение&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;a class=&quot;at-btn at-btn--pink is-hover&quot; href=&quot;#&quot;&gt;Отправить&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--yellow is-hover&quot; href=&quot;#&quot;&gt;Обсудить проект&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--gray is-hover&quot; href=&quot;#&quot;&gt;Смотреть еще кейсы&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Размеры: 60 · 50 (мобильный) · 40 (medium)&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;a class=&quot;at-btn at-btn--pink&quot; href=&quot;#&quot;&gt;Принять&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--pink at-btn--sm&quot; href=&quot;#&quot;&gt;Принять&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--pink at-btn--md&quot; href=&quot;#&quot;&gt;Принять&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="Button"></div></section><section class="comp" id="c-Chip"><div class="ch"><h3>Chip</h3><p class="us">Теги проектов и фильтры услуг</p></div><iframe title="Chip" loading="lazy" style="height:300px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Chip&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.dark{background:var(--black);padding:20px;margin:0 -24px}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;stack&quot;&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Тег секции · активный · розовый · жёлтый&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;at-chip&quot;&gt;Партнеры&lt;/span&gt;&lt;span class=&quot;at-chip is-active&quot;&gt;Отзывы&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--pink&quot;&gt;Новое&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--yellow&quot;&gt;ИИ&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Фильтр в форме: покой · выбран&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;at-chip at-chip--filter&quot;&gt;Разработка&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--filter is-active&quot;&gt;Дизайн&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--filter&quot;&gt;Мобильное приложение&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Размеры xs · sm · md · lg&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;at-chip at-chip--xs&quot;&gt;Кейс&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--sm&quot;&gt;E-commerce&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--md&quot;&gt;Госсектор&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--lg&quot;&gt;Промышленность&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;dark&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;at-chip at-chip--inverse&quot;&gt;На тёмном&lt;/span&gt;&lt;span class=&quot;at-chip at-chip--inverse at-chip--thin&quot;&gt;Тонкая рамка&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="Chip"></div></section><section class="comp" id="c-Link"><div class="ch"><h3>Link</h3><p class="us">Ссылка меню с цветовой «шторкой» и текстовая ссылка</p></div><iframe title="Link" loading="lazy" style="height:240px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Link&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.dark{background:var(--black);padding:20px;margin:0 -24px}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;stack&quot;&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Меню на светлом: покой · наведение · текущая&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;a class=&quot;at-link at-link--dark&quot; href=&quot;#&quot;&gt;Агентство&lt;/a&gt;&lt;a class=&quot;at-link at-link--dark is-hover&quot; href=&quot;#&quot;&gt;Услуги&lt;/a&gt;&lt;a class=&quot;at-link at-link--dark is-current&quot; href=&quot;#&quot;&gt;Проекты&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;dark&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;a class=&quot;at-link at-link--light&quot; href=&quot;#&quot;&gt;Агентство&lt;/a&gt;&lt;a class=&quot;at-link at-link--light is-hover&quot; href=&quot;#&quot;&gt;Решения&lt;/a&gt;&lt;a class=&quot;at-link at-link--light&quot; href=&quot;#&quot;&gt;Блог&lt;span class=&quot;at-link__line&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;cap&quot;&gt;Ссылка в тексте&lt;/p&gt;
+&lt;p class=&quot;text-p-x&quot; style=&quot;margin:0;color:var(--ink-secondary)&quot;&gt;Продолжая пользоваться сайтом, вы соглашаетесь с использованием файлов &lt;a class=&quot;at-textlink&quot; href=&quot;#&quot;&gt;cookie&lt;/a&gt; и с нашей &lt;a class=&quot;at-textlink&quot; href=&quot;#&quot;&gt;Политикой обработки персональных данных&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="Link"></div></section><section class="comp" id="c-TextField"><div class="ch"><h3>TextField</h3><p class="us">Поле с плавающей подписью и нижней линией</p></div><iframe title="TextField" loading="lazy" style="height:340px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;TextField&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 40px;max-width:820px}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;grid&quot;&gt;
+&lt;div class=&quot;at-field&quot;&gt;&lt;input class=&quot;at-field__input&quot; id=&quot;tf1&quot; placeholder=&quot; &quot;&gt;&lt;label class=&quot;at-field__label&quot; for=&quot;tf1&quot;&gt;Ваше имя &lt;b&gt;*&lt;/b&gt;&lt;/label&gt;&lt;/div&gt;
+&lt;div class=&quot;at-field is-focus&quot;&gt;&lt;input class=&quot;at-field__input&quot; id=&quot;tf2&quot; placeholder=&quot; &quot;&gt;&lt;label class=&quot;at-field__label&quot; for=&quot;tf2&quot;&gt;Компания&lt;/label&gt;&lt;/div&gt;
+&lt;div class=&quot;at-field is-filled&quot;&gt;&lt;input class=&quot;at-field__input&quot; id=&quot;tf3&quot; value=&quot;+7 (499) 350-13-90&quot;&gt;&lt;label class=&quot;at-field__label&quot; for=&quot;tf3&quot;&gt;Телефон &lt;b&gt;*&lt;/b&gt;&lt;/label&gt;&lt;/div&gt;
+&lt;div class=&quot;at-field is-filled is-error&quot;&gt;&lt;input class=&quot;at-field__input&quot; id=&quot;tf4&quot; value=&quot;info@atwinta&quot; aria-invalid=&quot;true&quot;&gt;&lt;label class=&quot;at-field__label&quot; for=&quot;tf4&quot;&gt;Эл. почта &lt;b&gt;*&lt;/b&gt;&lt;/label&gt;&lt;div class=&quot;at-field__error&quot;&gt;Введите корректный адрес почты&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="TextField"></div></section><section class="comp" id="c-Checkbox"><div class="ch"><h3>Checkbox</h3><p class="us">Согласия в форме заявки</p></div><iframe title="Checkbox" loading="lazy" style="height:240px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Checkbox&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;stack&quot; style=&quot;max-width:560px&quot;&gt;
+&lt;label class=&quot;at-check&quot;&gt;&lt;span class=&quot;at-check__box&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 8.5 6.5 12 13 4.5&quot; stroke=&quot;var(--pink)&quot; stroke-width=&quot;2&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;Я согласен на получение рекламных сообщений&lt;/label&gt;
+&lt;label class=&quot;at-check is-checked&quot;&gt;&lt;span class=&quot;at-check__box&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 8.5 6.5 12 13 4.5&quot; stroke=&quot;var(--pink)&quot; stroke-width=&quot;2&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span&gt;Я даю согласие на обработку персональных данных в соответствии с &lt;a class=&quot;at-textlink&quot; href=&quot;#&quot;&gt;политикой обработки персональных данных&lt;/a&gt;&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;at-check is-attention&quot;&gt;&lt;span class=&quot;at-check__box&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 8.5 6.5 12 13 4.5&quot; stroke=&quot;var(--pink)&quot; stroke-width=&quot;2&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;Отметьте согласие, чтобы отправить заявку&lt;/label&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="Checkbox"></div></section><section class="comp" id="c-NumberFact"><div class="ch"><h3>NumberFact</h3><p class="us">«Атвинта в цифрах»: Stem с хроматическим сдвигом</p></div><iframe title="NumberFact" loading="lazy" style="height:360px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;NumberFact&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 60px}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;grid&quot;&gt;
+&lt;div class=&quot;at-fact at-fact--m&quot;&gt;&lt;div class=&quot;at-fact__head&quot;&gt;&lt;span class=&quot;at-fact__value&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;at-fact__unit&quot;&gt;сотрудников&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;at-fact__desc&quot; style=&quot;margin:0&quot;&gt;Аналитики, дизайнеры, разработчики и тестировщики, готовые подхватить любой объем задач&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;at-fact at-fact--m&quot;&gt;&lt;div class=&quot;at-fact__head&quot;&gt;&lt;span class=&quot;at-fact__value&quot;&gt;400+&lt;/span&gt;&lt;span class=&quot;at-fact__unit&quot;&gt;проектов&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;at-fact__desc&quot; style=&quot;margin:0&quot;&gt;Партнеры крупного и среднего бизнеса, создаем клиентские сервисы и масштабные экосистемы&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="NumberFact"></div></section><section class="comp" id="c-ServiceLine"><div class="ch"><h3>ServiceLine</h3><p class="us">Строка списка услуг с розовой точкой по центру</p></div><iframe title="ServiceLine" loading="lazy" style="height:340px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;ServiceLine&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+body{padding:0}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;at-service&quot;&gt;&lt;span class=&quot;at-service__fill&quot;&gt;&lt;/span&gt;&lt;svg class=&quot;at-service__dot&quot; viewBox=&quot;0 0 30 30&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;10&quot; fill=&quot;var(--pink)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;at-service__inner&quot;&gt;&lt;div class=&quot;at-service__title&quot;&gt;Внедрение ИИ&lt;/div&gt;&lt;div class=&quot;at-service__desc&quot;&gt;&lt;span&gt;Встраиваем ИИ в процессы бизнеса&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;at-service is-hover&quot;&gt;&lt;span class=&quot;at-service__fill&quot;&gt;&lt;/span&gt;&lt;svg class=&quot;at-service__dot&quot; viewBox=&quot;0 0 30 30&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;10&quot; fill=&quot;var(--pink)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;at-service__inner&quot;&gt;&lt;div class=&quot;at-service__title&quot;&gt;Разработка&lt;/div&gt;&lt;div class=&quot;at-service__desc&quot;&gt;&lt;span&gt;Доверьте нам разработку сайта, сервиса или приложения: от идеи до внедрения&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;at-service&quot;&gt;&lt;span class=&quot;at-service__fill&quot;&gt;&lt;/span&gt;&lt;svg class=&quot;at-service__dot&quot; viewBox=&quot;0 0 30 30&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;10&quot; fill=&quot;var(--pink)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;at-service__inner&quot;&gt;&lt;div class=&quot;at-service__title&quot;&gt;Дизайн&lt;/div&gt;&lt;div class=&quot;at-service__desc&quot;&gt;&lt;span&gt;Интерфейсы на основе аналитики и данных&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="ServiceLine"></div></section><section class="comp" id="c-ProjectCard"><div class="ch"><h3>ProjectCard</h3><p class="us">Квадратная карточка кейса в сетке с зазором 1px</p></div><iframe title="ProjectCard" loading="lazy" style="height:500px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;ProjectCard&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+.m1{background:var(--pink)}.m2{background:var(--black)}.m3{background:var(--yellow)}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;at-cards&quot; style=&quot;max-width:1100px&quot;&gt;
+&lt;a class=&quot;at-card at-card--black-skin&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;at-card__media m1&quot;&gt;&lt;/span&gt;&lt;div class=&quot;at-card__awards&quot;&gt;&lt;span class=&quot;at-card__award&quot;&gt;Золотой сайт · 2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;at-card__title&quot;&gt;Сервис подготовки к ЕГЭ СМИТАП: 8000 учеников ежедневно&lt;/div&gt;&lt;/a&gt;
+&lt;a class=&quot;at-card at-card--black-skin&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;at-card__media m2&quot;&gt;&lt;/span&gt;&lt;div class=&quot;at-card__awards&quot;&gt;&lt;span class=&quot;at-card__award&quot;&gt;Tagline · 1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;at-card__title&quot;&gt;BI-система Аналитического центра при Правительстве РФ&lt;/div&gt;&lt;/a&gt;
+&lt;a class=&quot;at-card at-card--white-skin&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;at-card__media m3&quot;&gt;&lt;/span&gt;&lt;div class=&quot;at-card__awards&quot;&gt;&lt;span class=&quot;at-card__award&quot;&gt;Рейтинг Рунета · 4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;at-card__title&quot;&gt;Стартап из США — доставка день в день GoFlyy&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="ProjectCard"></div></section><section class="comp" id="c-Header"><div class="ch"><h3>Header</h3><p class="us">Закреплённая шапка: полупрозрачный белый и blur 25px</p></div><iframe title="Header" loading="lazy" style="height:280px" srcdoc="&lt;!doctype html&gt;
+&lt;html data-theme=&quot;light&quot; lang=&quot;ru&quot;&gt;
+&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/tokens.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;project/components/bundle.css&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Header&lt;/title&gt;
+&lt;style&gt;
+html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}
+.row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.cap{font-size:12px;line-height:16px;color:var(--ink-muted);letter-spacing:.02em;margin:0 0 8px}
+body{padding:0}.bg{background:var(--pink);padding:0 0 40px}.dk{background:var(--black)}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;bg&quot;&gt;&lt;header class=&quot;at-header&quot;&gt;
+&lt;img class=&quot;at-header__logo&quot; src=&quot;project/assets/Logos/atwinta-logo-dark.svg&quot; alt=&quot;Атвинта&quot;&gt;
+&lt;nav class=&quot;at-header__nav&quot;&gt;&lt;a class=&quot;at-link at-link--dark&quot; href=&quot;#&quot;&gt;Агентство&lt;/a&gt;&lt;a class=&quot;at-link at-link--dark&quot; href=&quot;#&quot;&gt;Услуги &lt;img src=&quot;project/assets/Icons/keyboard-arrow-down.svg&quot; width=&quot;20&quot; height=&quot;20&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;a class=&quot;at-link at-link--dark is-hover&quot; href=&quot;#&quot;&gt;Проекты&lt;/a&gt;&lt;a class=&quot;at-link at-link--dark&quot; href=&quot;#&quot;&gt;Блог&lt;/a&gt;&lt;/nav&gt;
+&lt;div class=&quot;at-header__end&quot;&gt;&lt;a class=&quot;at-header__phone&quot; href=&quot;#&quot;&gt;+7 (499) 350-13-90&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--yellow at-btn--header&quot; href=&quot;#&quot;&gt;Обсудить проект&lt;/a&gt;&lt;button class=&quot;at-burger&quot; aria-label=&quot;Меню&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;/header&gt;&lt;/div&gt;
+&lt;div class=&quot;dk&quot; data-theme=&quot;dark&quot;&gt;&lt;header class=&quot;at-header&quot;&gt;
+&lt;img class=&quot;at-header__logo&quot; src=&quot;project/assets/Logos/atwinta-logo-light.svg&quot; alt=&quot;Атвинта&quot;&gt;
+&lt;div class=&quot;at-header__end&quot;&gt;&lt;a class=&quot;at-header__phone&quot; href=&quot;#&quot;&gt;+7 (499) 350-13-90&lt;/a&gt;&lt;a class=&quot;at-btn at-btn--yellow at-btn--header&quot; href=&quot;#&quot;&gt;Обсудить проект&lt;/a&gt;&lt;button class=&quot;at-burger&quot; aria-label=&quot;Меню&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;/header&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe><div class="md" data-md="Header"></div></section></section>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+const MD = {"readme": "Атвинта — студия заказной веб-разработки и внедрения ИИ. Сайт говорит со средним и крупным бизнесом уверенно и по делу: белое поле, чёрный текст, два громких цвета — розовый `pink` и кислотно-жёлтый `yellow` — и крупная плотная типографика с отрицательным трекингом.\n\n## Голос и тексты\n\n- Пишите от «мы» к «вы»: «Встраиваем LLM-агентов в весь цикл производства», «Доверьте нам разработку сайта, сервиса или приложения: от идеи до внедрения».\n- Начинайте с глагола в настоящем времени: «Встраиваем», «Сформируем», «Приведем клиентов».\n- Подкрепляйте цифрами, а не эпитетами: «15 лет экспертизы», «400+ проектов», «95% заказчиков довольны нашей командой».\n- Название кейса = продукт + измеримый результат: «Сервис подготовки к ЕГЭ СМИТАП: 8000 учеников ежедневно».\n- Регистр обычный, как в предложении; капслок — только в тегах размера `xs`. Эмодзи не используются.\n- Допустима лёгкая самоирония в подзаголовках: «А ещё мы честные», «Нас любят за результат».\n- Буква «ё» на сайте используется непоследовательно («еще», «своём»); в новых текстах ставьте «ё».\n\n## Цвет\n\n- Фон — `surface` (белый), текст — `ink` (`black` #222222), вторичный текст — `ink-secondary` (`extra-dark-gray`).\n- `pink` — действие и маркер: розовая кнопка формы, точки и стрелки в списке услуг, подчёркивания ссылок, ошибки, буква «и» в логотипе.\n- `yellow` — выделение: CTA «Обсудить проект», выбранный чип, ховер розовой кнопки. Текст на жёлтом — только `on-highlight` (`extra-dark-gray`), никогда белый.\n- Розовый и жёлтый меняются местами при наведении: розовая кнопка становится жёлтой, жёлтая — розовой.\n- Тёмная тема — это тёмные секции сайта (подвал, шапка над героем, B2B-карточки): `surface` = `black`, текст белый, ссылки заливаются `yellow` вместо `pink` (`link-hover`).\n- Серые: `light-gray` — только линии и рамки, `extra-light-gray` — подложки, `gray` — иконки и рамка чекбокса, не текст на светлом.\n- Контраст: белый на `pink` — 3.74:1, `dark-gray` на белом — 4.42:1. Так сделано на сайте; для мелкого текста это ниже WCAG AA. Если нужна доступность, берите `pink-dark` под белый текст и `extra-dark-gray` вместо `dark-gray`.\n\n## Типографика\n\n- Две гарнитуры: **Stem** (`display`) — только для сверхкрупных цифр и H1 (`text-h-xxl`, `text-h-xl`); **Geologica** (`sans`) — всё остальное.\n- Трекинг отрицательный всегда, примерно −3% от кегля (`-1.5px` на 50px, `-0.45px` на 15px).\n- Наборный текст светлый (300): `text-h-x` 20/30 для абзацев, `text-p-x` 15/20 для подписей и кнопок. Заголовки — 400–500, строки услуг — 600.\n- Имена стилей совпадают с классами сайта (`text-h-l`, `text-p-xs`…), значения в системе — для ширины от 1680px. Адаптив по брейкпоинтам:\n\n| Стиль | < 720 | 720 | 1280 | 1680+ |\n|---|---|---|---|---|\n| `text-h-xxl` | 60/70 · 400 | 90/103 · 700 | 120/120 · 500 | 150/150 · 500 |\n| `text-h-xl` | 32/30 | 50/50 | 70/70 | 80/80 |\n| `text-h-l` | 26/32 · 400 | 40/50 · 500 | 50/60 · 400 | 50/60 · 400 |\n| `text-h-m` | 20/30 · 300 | 32/40 · 500 | 32/40 · 500 | 40/50 · 500 |\n| `text-p-s` | 20/30 · 300 | 20/30 · 300 | 26/32 · 400 | 32/40 · 500 |\n| `text-p-xs` | 18/26 | 18/26 | 26/32 | 26/32 |\n| `text-p-special` | 15/20 | 15/20 | 20/30 | 22/30 |\n| `text-h-x` | 15/20 | 15/20 | 15/20 | 20/30 |\n| `text-p-x` | 15/20 | 15/20 | 15/20 | 15/20 |\n\n- Stem — коммерческий шрифт ParaType, в систему не включён: подключите свою лицензию (`@font-face` с семейством `Stem`, веса 300/400/500/700). Без неё стек `display` падает на Geologica. Geologica грузится с Google Fonts (OFL), веса 300–700.\n\n## Отступы и сетка\n\n- 12 колонок от 720px (4 на мобильном), межколоночный зазор `layout-column-gap`: 20 → 40 → 80 → 120px.\n- Контейнер: 640 (720+), 944 (1000+), 1120 (1280+), 1280 (1440+), 1440 (1680+), 1680 (1900+); на мобильном — поля 20px.\n- Шкала `space-*` растёт с шириной экрана; в токенах — значения от 1680px:\n\n| Токен | < 1280 | 1280 | 1680+ |\n|---|---|---|---|\n| `space-3xs` | 5 | 5 | 5 |\n| `space-2xs` | 10 | 10 | 10 |\n| `space-xs` | 20 | 20 | 20 |\n| `space-sm` | 20 | 20 | 30 |\n| `space-md` | 20 | 30 | 40 |\n| `space-lg` | 30 | 40 | 60 |\n| `space-xl` | 40 | 60 | 80 |\n| `space-2xl` | 80 | 80 | 120 |\n| `space-3xl` | 60 | 120 | 160 |\n| `space-4xl` | 90 | 160 | 180 |\n\n- Сетки карточек кейсов стоят с зазором 1px: линия между карточками — это фон страницы.\n\n## Формы, линии, скругления\n\n- Кнопки — всегда капсула `radius-pill`; чипы — `radius-chip`. Карточки кейсов, секции и фото — без скругления.\n- Поля ввода без рамки: только нижняя линия 2px `line`, при фокусе — `pink`.\n- Тени почти не используются. Объём дают фото с 3D-рендерами (розовые глянцевые формы в герое) и цвет. Единственный фирменный эффект — хроматический сдвиг `chromatic` на больших цифрах.\n- Шапка — белый 60% (`header-bg`) с `backdrop-filter: header-blur`.\n\n## Движение\n\n- Переходы линейные: 0.2s у кнопок, 0.3s у чипов, ссылок и карточек; 0.35s ease-out у заливки строки услуги.\n- Ховер-механика: цвет «наезжает» (снизу у кнопок, слева направо у ссылок, из центра по высоте у строки услуги), фото в карточке увеличивается до 1.2.\n- Уважайте `prefers-reduced-motion`: переходы отключаются, тряска поля согласия тоже.\n\n## Иконография\n\n- Интерфейсные иконки — Material Symbols (набор `material-symbols` через Iconify), 24px, заливка одним цветом. В системе — SVG с цветом `black` (#222222); для другого цвета перекрасьте `fill` в копии файла, `<img>` не наследует `currentColor`.\n- Фирменные пиктограммы — тонкая стрелка `service-arrow` (обводка 2px, square cap) и точка `service-dot`, обе `pink`, 30px.\n- Значки наград на карточках кейсов — логотипы премий, у каждой свой; в систему не включены.\n\n## Логотип\n\n- Слово «Атвинта» с розовой чертой под «и». `atwinta-logo-dark` (#222222 + `pink`) — на светлом; `atwinta-logo-light` (белый + `pink`) — на тёмном и на фото.\n- Размер в шапке 164×40. Не перекрашивайте черту и не ставьте логотип на `pink` или `yellow`.\n\n## Компоненты\n\nКомпоненты — CSS-классы с префиксом `at-` в `components/bundle.css`, без JavaScript: Button, Chip, Link, TextField, Checkbox, NumberFact, ServiceLine, ProjectCard, Header. Подключите `tokens.css`, затем `bundle.css`, и размечайте HTML так, как показано в превью каждого компонента.\n", "Button": "# Button\n\nКнопка-капсула с «перекатом» цвета: при наведении снизу въезжает слой второго фирменного цвета.\n\n## Варианты\n- `at-btn--pink` — основное действие формы («Отправить», «Принять»). Фон `pink`, текст `white`; на ховере — фон `yellow`, текст `extra-dark-gray`.\n- `at-btn--yellow` — главная CTA шапки «Обсудить проект». Фон `yellow`, текст `extra-dark-gray`; на ховере — `pink` и белый текст.\n- `at-btn--gray` — второстепенное действие. Фон `extra-light-gray`, на ховере текст становится `pink`.\n\n## Размеры\n- По умолчанию 60px высотой, паддинг 15px 30px (от 1280px).\n- `at-btn--sm` — 50px, мобильная версия.\n- `at-btn--md` — 40px, паддинг 0 20px (кнопка в cookie-плашке).\n\n## Что передаёт потребитель\nЭлемент `<a>` или `<button>` с классами `at-btn at-btn--<цвет>` и коротким текстом-глаголом. Текст — `text-p-x` (15/20, light), иконок внутри нет.\n\n## Правила\n- Скругление всегда `radius-pill`, без рамок и теней.\n- На странице одна розовая или одна жёлтая кнопка в зоне видимости: жёлтая живёт в шапке, розовая — в формах.\n- В шапке у жёлтой кнопки при наведении текст сменяется бегущей строкой (marquee 5s) и кнопка слегка пружинит — в превью не воспроизводится.\n- Белый на `pink` даёт 3.74:1: для мелкого текста ниже AA. Так на сайте; если нужна доступность, делайте текст 19px+ bold или используйте `pink-dark`.\n- Фокус: `outline 3px focus-ring`, отступ 6px.\n", "Chip": "# Chip\n\nЧип-капсула с рамкой 2px: подпись секции («Партнеры», «Отзывы»), тег проекта или фильтр услуг в форме.\n\n## Варианты\n- Базовый `at-chip`: рамка `line`, текст `ink-secondary`, 40px высотой, `ui-chip` (18/26). На мобильном — 32px и 14/20.\n- `is-active` — заливка и рамка `yellow`, текст `extra-dark-gray`.\n- `at-chip--filter` — для выбора в форме: паддинг 6px 20px, текст `ui-chip-filter` (16/24 light), при наведении заливается `yellow`.\n- `at-chip--pink`, `at-chip--yellow` — цветные метки.\n- `at-chip--inverse` — на тёмном фоне: белый текст, рамка #555555. `at-chip--thin` — рамка 1px.\n- Размеры `--xs` (10px, ВЕРХНИЙ РЕГИСТР), `--sm` (11px), `--md` (12px medium, 40px), `--lg` (12px medium, 44px).\n\n## Что передаёт потребитель\nКороткий текст в одно-два слова, состояние выбора (`is-active`). Для фильтров — обработчик клика на всём чипе.\n\n## Правила\n- Скругление `radius-chip`; переход всех свойств 0.3s linear.\n- Не ставьте иконки внутрь чипа: на сайте чипы только текстовые.\n- Выбранный фильтр отличается заливкой, а не только цветом рамки.\n", "Link": "# Link\n\nСсылка навигации, которая при наведении «заливается» слева направо акцентным цветом, и подчёркнутая текстовая ссылка.\n\n## Варианты\n- `at-link at-link--dark` — на светлом фоне: текст `black`, заливка `pink` (токен `link-hover`).\n- `at-link at-link--light` — на тёмном: текст `white`, заливка `yellow`.\n- `is-current` — текущий раздел, залит целиком.\n- `at-link__line` — необязательная линия 2px под ссылкой с прозрачностью 0.3, исчезает при наведении.\n- `at-textlink` — ссылка внутри абзаца: подчёркивание `pink` 50%, отступ 6px, на ховере текст `pink`.\n\n## Что передаёт потребитель\nТекст ссылки (одно слово для меню), `href`, признак текущего раздела. Для пунктов с подменю — иконка `keyboard-arrow-down` после текста.\n\n## Правила\n- Стиль текста меню — `ui-link` (18/28 light), на узких экранах 16px.\n- Заливка — через `background-clip: text` с градиентом 50/50, переход 0.3s linear.\n- Телефон и почта в шапке оформляются как `at-textlink`.\n", "TextField": "# TextField\n\nПоле ввода без рамки: только нижняя линия 2px и подпись, которая при фокусе или заполнении поднимается над полем.\n\n## Состояния\n- Покой: линия `line`, подпись `ink-secondary` 20/30 light внутри поля.\n- Наведение и фокус: линия `pink`.\n- Заполнено: подпись уменьшается до 15/20 и уходит наверх, цвет `ink-muted`.\n- Ошибка (`is-error`): линия `error`, под полем текст ошибки `text-p-x` цвета `error`.\n\n## Что передаёт потребитель\n`id`, текст подписи, признак обязательности (звёздочка `<b>*<\/b>` окрашена в `pink`), значение и текст ошибки. Для textarea («Краткое описание проекта») — тот же класс на `<textarea>`.\n\n## Правила\n- Текст в поле — `text-h-x` (20/30 light), на мобильном 15/20.\n- Поле с иконкой слева получает `padding-left: 35px`, иконка `gray`, при фокусе — `pink`.\n- Ошибка всегда словами, не только красной линией.\n- Линия `light-gray` декоративная (1.41:1 к белому) — поле различимо по подписи; так на сайте.\n", "Checkbox": "# Checkbox\n\nКвадратный чекбокс 22px с рамкой 2px и розовой галочкой; используется для согласий в форме заявки.\n\n## Состояния\n- Покой: рамка `gray`, скругление `radius-xs`.\n- Наведение и отмечен: рамка `pink`, галочка `pink`.\n- Внимание (`is-attention`): если пытаются отправить форму без согласия — обводка 3px `pink` с отступом 6px и `radius-sm`, подложка розовая 12%, тень `attention-ring`, текст становится `pink` medium, элемент вздрагивает (0.5s, отключается при reduced motion).\n\n## Что передаёт потребитель\nТекст согласия (может содержать `at-textlink`), состояние `checked`, обработчик изменения.\n\n## Правила\n- Текст — `text-p-x` (15/20 light), цвет `ink-secondary`, зазор до бокса 15px.\n- Не красьте фон отмеченного бокса: отметка — только галочкой и рамкой.\n", "NumberFact": "# NumberFact\n\nКрупная цифра шрифтом Stem с фирменным хроматическим сдвигом, единица справа и описание под ней.\n\n## Структура\n- `at-fact__value` — число: `text-h-xxl`, шрифт `display`, вес 700, межстрочный 1, `text-shadow` = токен `chromatic` (жёлтый −3px, розовый 50% +3px).\n- `at-fact__unit` — единица («сотрудников», «лет», «рост»): 26/32 regular, `ink`.\n- `at-fact__desc` — пояснение: `text-p-special` (22/30 light), `ink-secondary`.\n- `at-fact--m` — уменьшенный размер для сетки 2×2.\n\n## Что передаёт потребитель\nЧисло как строку (с «+», «×» если нужно), единицу, описание в одно-два предложения.\n\n## Правила\n- Отступ от цифры до описания: 10px на мобильном, 20px от 720px, 30px от 1440px.\n- Хроматический сдвиг только на цифрах фактов, не на заголовках.\n- Числа — реальные: «15 лет», «100 сотрудников», «6+ лет», «400+ проектов», «×2 рост».\n", "ServiceLine": "# ServiceLine\n\nСтрока списка услуг во всю ширину: название слева, розовая точка по центру, описание справа, линия снизу.\n\n## Структура\n- `at-service__title` — 5 колонок из 12, `text-h-m` с весом 600, цвет `ink-secondary`. На мобильном рядом с названием — стрелка `service-arrow` 30px.\n- `at-service__dot` — круг `pink` 20px строго по центру строки (с 1000px).\n- `at-service__desc` — колонки 8–12, `text-h-x`, цвет `ink`.\n- Нижняя граница 2px `line`, вертикальный паддинг 30px (мобильный) / 40px.\n\n## Наведение\nГраница исчезает, из середины строки по высоте вырастает заливка `surface-alt` (0.35s ease-out). На сайте в центре ещё появляется видео-превью — его потребитель передаёт сам.\n\n## Что передаёт потребитель\nНазвание, описание в одно предложение, ссылку на страницу услуги, при желании видео для наведения.\n", "ProjectCard": "# ProjectCard\n\nКвадратная карточка кейса: фото или видео на всю площадь, сверху счётчики наград, снизу название проекта.\n\n## Структура\n- Карточка `aspect-ratio: 1`, паддинг 30px (мобильный) / 40px (720+) / 60px (1280+).\n- `at-card__media` — изображение или видео на весь блок; при наведении увеличивается до 1.2 (0.3s).\n- `at-card__awards` — иконки наград 60px (40px на мобильном) с числом справа, 26/32. На ховере иконки выезжают сверху по очереди, лента наград прокручивается.\n- `at-card__title` — `text-p-s` с весом 500 (26/32 на 1280).\n- Скин `at-card--black-skin` — белый текст поверх тёмного или насыщенного фото; `at-card--white-skin` — `black` на светлом.\n\n## Сетка\n`at-cards`: 1 колонка → 2 (720+) → 3 (1280+), зазор 1px — линии между карточками дают фон страницы.\n\n## Что передаёт потребитель\nФото/видео кейса, название в одну фразу с результатом («8000 учеников ежедневно»), список наград с количеством, ссылку. В превью вместо фото — фирменные заливки: изображения кейсов принадлежат клиентам и в систему не копируются.\n", "Header": "# Header\n\nЗакреплённая шапка высотой 90px: логотип, меню, телефон, жёлтая CTA и бургер; фон — белый 60% с размытием.\n\n## Структура\n- Логотип 164×40: `atwinta-logo-dark` на светлом, `atwinta-logo-light` над тёмным героем.\n- Меню (с 1440px): `at-link` с `ui-link`, у «Услуги» и «Решения» — стрелка `keyboard-arrow-down` и выпадающая панель с вкладками.\n- Справа: телефон и почта как `at-textlink` (15/20), кнопка `at-btn--yellow` «Обсудить проект», бургер 40×40 из трёх линий 2px.\n- Фон `header-bg` + `backdrop-filter: header-blur`. Над тёмным героем шапка прозрачная, ссылки `at-link--light`.\n\n## Что передаёт потребитель\nПункты меню, телефон, почту, обработчик открытия бургер-меню, признак тёмного героя.\n\n## Правила\n- Контент под шапкой отступает на `header-mb` (80px, на мобильном 40px).\n- В шапке одна цветная кнопка — жёлтая.\n"};
+document.querySelectorAll('[data-md]').forEach(el => {
+  let src = MD[el.dataset.md] || '';
+  src = src.replace(/^# .*\n/, '');
+  el.innerHTML = marked.parse(src);
+});
+</script>
+</body>
+</html>
